@@ -22,6 +22,6 @@ namespace Actio.Common.RabbitMq
                 cfg.FromDeclaredQueue(q => q.WithName(GetQueueName<TEvent>()))));
 
         private static string GetQueueName<T>()
-        => $"{Assembly.GetEntryAssembly().GetName()}/{typeof(T).Name}";
+            => $"{Assembly.GetEntryAssembly().GetName()}/{typeof(T).Name}";
     }
 }

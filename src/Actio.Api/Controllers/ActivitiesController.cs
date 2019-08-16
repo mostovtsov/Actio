@@ -6,6 +6,7 @@ using RawRabbit;
 
 namespace Actio.Api.Controllers
 {
+    [Route("api/activities")]
     public class ActivitiesController : Controller
     {
         private readonly IBusClient _busClient;
@@ -16,7 +17,7 @@ namespace Actio.Api.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Post([FromBody]CreateActivity command)
+        public async Task<IActionResult> Post([FromBody] CreateActivity command)
         {
             command.Id = Guid.NewGuid();
             command.CreatedAt = DateTime.UtcNow;

@@ -31,7 +31,9 @@ namespace Actio.Common.Services
                 .AddCommandLine(args)
                 .Build();
 
-            var webHostBuilder = WebHost.CreateDefaultBuilder(args).UseConfiguration(config).UseStartup<TStartap>();
+            var webHostBuilder = WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(config)
+                .UseStartup<TStartap>();
 
             return new HostBuilder(webHostBuilder.Build());
         }
